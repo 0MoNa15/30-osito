@@ -121,12 +121,6 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;line-height:1.8;mar
       </div>
     </div>
 
-    <div class="field" id="attendeesField">
-      <label for="attendees">¿Cuántas personas asistirán en total, incluyéndote? *</label>
-      <input id="attendees" name="attendees" type="number" min="1" max="40" step="1" value="1" required>
-      <p class="hint">Indica el total de personas de tu combo que asistirán.</p>
-    </div>
-
     <div class="field">
       <span class="field-label">🎮 ¿Qué consola podrías prestar para recordar viejos tiempos?</span>
       <div class="choice-list">
@@ -176,17 +170,6 @@ if (requestedGuest) {
   if (match) guestSelect.value = match.value;
 }
 const attendanceInputs = [...document.querySelectorAll('input[name="attendance"]')];
-const attendees = document.getElementById("attendees");
-const attendeesField = document.getElementById("attendeesField");
-function updateAttendance() {
-  const yes = document.querySelector('input[name="attendance"]:checked')?.value === "¡Sí, allá estaré sin falta!";
-  attendees.disabled = !yes;
-  attendees.required = yes;
-  attendeesField.style.opacity = yes ? "1" : ".45";
-  if (!yes) attendees.value = "0";
-  else if (attendees.value === "0") attendees.value = "1";
-}
-attendanceInputs.forEach(input => input.addEventListener("change", updateAttendance));
 document.getElementById("rsvpForm").addEventListener("submit", event => {
   event.preventDefault();
   const form = event.currentTarget;
@@ -194,7 +177,6 @@ document.getElementById("rsvpForm").addEventListener("submit", event => {
   const data = {
     invitado: guestSelect.value,
     asistencia: document.querySelector('input[name="attendance"]:checked').value,
-    totalAsistentes: Number(attendees.value),
     consolas: [...document.querySelectorAll('input[name="console"]:checked')].map(x => x.value),
     monitor: document.querySelector('input[name="monitor"]:checked')?.value || "Sin respuesta",
     observaciones: document.getElementById("notes").value.trim()

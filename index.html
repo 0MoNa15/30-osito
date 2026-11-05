@@ -1,31 +1,222 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#090909"><meta name="description" content="Invitación a la celebración sorpresa de los 30 años de Edward."><title>Edward · 30 años</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090909">
+<meta name="description" content="Invitación privada a la celebración sorpresa de Edward.">
+<title>EDWARD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--gold:#d6b45b;--cream:#f4e8c4;--muted:#b8b2a3}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0,#292216 0,#101010 48%,#070707 100%);color:#f7f4ec;font-family:Montserrat,Arial,sans-serif;padding:28px 16px 60px}.wrap{max-width:720px;margin:auto}.card{border:1px solid #806b37;border-radius:22px;background:linear-gradient(160deg,rgba(29,27,22,.96),rgba(10,10,10,.98));padding:clamp(25px,6vw,56px);text-align:center;box-shadow:0 25px 80px #0009;position:relative;overflow:hidden}.card:before{content:"";position:absolute;inset:8px;border:1px solid #d6b45b35;border-radius:15px;pointer-events:none}.eyebrow{letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-size:.72rem}.age{font:clamp(5rem,20vw,9rem)/1 Cinzel,serif;color:var(--gold);margin:24px 0 4px;text-shadow:0 0 35px #d6b45b35}.name{font:clamp(2rem,8vw,3.4rem) Cinzel,serif;letter-spacing:5px;margin:0;color:var(--cream)}.rule{width:90px;height:1px;background:var(--gold);margin:28px auto}.lead{font-size:1.12rem;line-height:1.9;color:#eee6d4}.highlight{color:var(--gold);font-weight:600}.details{display:grid;gap:14px;margin:30px 0}.detail{border-top:1px solid #d6b45b45;padding:15px 8px}.detail strong{display:block;color:var(--gold);font-size:.75rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}.detail span{line-height:1.6}.notice{background:#35280f;border:1px solid #a77c25;border-radius:12px;padding:16px;color:#f4dfaa;line-height:1.6;margin:26px 0}.guest{color:var(--gold);font-weight:600}.btn{display:inline-block;background:linear-gradient(120deg,#f2dda0,#b88b2b);color:#17130a;text-decoration:none;padding:14px 25px;border-radius:30px;font-weight:700;letter-spacing:1px;margin-top:12px}.foot{color:var(--muted);font-size:.8rem;margin-top:28px;line-height:1.7}a.map{color:var(--cream)}@media(max-width:480px){body{padding:14px 10px 35px}.card{padding:32px 20px}}
+:root{--gold:#d7b65f;--gold2:#f1dda0;--cream:#f5edda;--muted:#bcb5a6;--panel:#141414;--line:#806b37;--red:#e7a4a0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -10%,#342a18 0,#12110e 42%,#070707 100%);color:#f7f3e9;font-family:Montserrat,Arial,sans-serif;padding:24px 14px 60px}
+.wrap{width:min(760px,100%);margin:auto}
+.card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;background:linear-gradient(155deg,rgba(27,25,20,.98),rgba(9,9,9,.99));padding:clamp(25px,6vw,58px);box-shadow:0 25px 80px #000b}
+.card:before{content:"";position:absolute;inset:8px;border:1px solid #d6b45b30;border-radius:15px;pointer-events:none}
+header,.section,footer{position:relative;z-index:1}
+header{text-align:center}
+.eyebrow{letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-size:.7rem}
+h1{font:clamp(2.8rem,12vw,5.5rem)/1.15 Cinzel,serif;letter-spacing:.13em;color:var(--gold2);margin:24px 0 8px;text-shadow:0 0 32px #d6b45b35}
+.rule{width:88px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:25px auto}
+.intro{font-size:1rem;line-height:1.95;color:#e9e1d0;text-align:left}
+.intro strong{color:var(--gold2)}
+.story{font-size:.95rem;line-height:1.9;color:#e9e1d0;text-align:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:30px;padding:14px 23px;background:linear-gradient(120deg,#f3dfa3,#b78b2b);color:#17130a;text-decoration:none;font:700 .78rem Montserrat,sans-serif;letter-spacing:1px;cursor:pointer;transition:transform .2s,filter .2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn.secondary{background:transparent;color:var(--gold2);border:1px solid var(--line)}
+.center{text-align:center}
+.notice{margin:25px 0;padding:18px;border:1px solid #a77c25;border-radius:13px;background:#30240f;color:#f4dfaa;line-height:1.7;text-align:center}
+.notice strong{color:#ffe9a8}
+.details{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:27px 0}
+.detail{border:1px solid #d6b45b36;border-radius:12px;padding:17px 12px;text-align:center;background:#ffffff05}
+.detail strong{display:block;color:var(--gold);font-size:.68rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.detail span{font-size:.9rem;line-height:1.65;color:var(--cream)}
+.maplink{color:var(--gold2);text-decoration:underline;text-underline-offset:4px}
+.section{margin-top:40px;padding-top:30px;border-top:1px solid #d6b45b45}
+h2{font:600 clamp(1.35rem,5vw,1.8rem) Cinzel,serif;letter-spacing:2px;color:var(--gold2);text-align:center;margin:0 0 12px}
+.section-intro{text-align:center;color:var(--muted);font-size:.87rem;line-height:1.7;margin:0 auto 24px;max-width:560px}
+label,.field-label{display:block;color:var(--gold2);font-size:.8rem;font-weight:600;margin:0 0 9px}
+input,select,textarea{width:100%;border:1px solid #79663b;border-radius:10px;background:#0c0c0c;color:#f8f1df;padding:13px 14px;font:400 .9rem Montserrat,sans-serif;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px #d6b45b20}
+select option{background:#111;color:#fff}
+textarea{min-height:100px;resize:vertical}
+.field{margin:0 0 21px}
+.choice-list{display:grid;gap:10px}
+.choice{display:flex;align-items:flex-start;gap:11px;border:1px solid #ffffff20;background:#ffffff05;border-radius:10px;padding:12px;color:#eee7d7;font-size:.86rem;line-height:1.5;cursor:pointer}
+.choice input{width:17px;height:17px;min-width:17px;margin:1px 0 0;accent-color:var(--gold)}
+.inline-choices{display:grid;gap:10px}
+.hint{color:var(--muted);font-size:.77rem;line-height:1.7;margin:10px 0 0}
+.gamer{padding:13px 15px;border-left:2px solid var(--gold);background:#d6b45b0c;color:#d9cfb8;font-size:.8rem;line-height:1.7;margin-top:13px}
+.submit{width:100%;margin-top:5px}
+.status{display:none;margin-top:18px;padding:15px;border:1px solid var(--line);border-radius:10px;color:var(--cream);font-size:.84rem;line-height:1.7;background:#201b10}
+.status.show{display:block}
+.status strong{color:var(--gold2)}
+.smallprint{font-size:.76rem;color:var(--muted);line-height:1.8;text-align:center;margin:22px auto 0}
+footer{text-align:center;color:var(--muted);font-size:.75rem;line-height:1.8;margin-top:30px}
+.gold{color:var(--gold2)}
+@media(max-width:560px){body{padding:12px 9px 35px}.card{padding:32px 19px}.details{grid-template-columns:1fr}.intro{font-size:.93rem}.section{margin-top:32px;padding-top:25px}}
 </style>
 </head>
-<body><main class="wrap"><section class="card">
-<div class="eyebrow">Una noche para recordar</div>
-<div class="age">30</div><h1 class="name">EDWARD</h1><div class="rule"></div>
-<p class="lead">Hay momentos que merecen celebrarse en grande…<br>y este es uno de ellos.<br><span class="highlight">¡Te esperamos para celebrar sus 30 años!</span></p>
-<p id="saludo" class="lead guest"></p>
-<div class="notice">🤫 <strong>¡Es una sorpresa!</strong><br>Ayúdanos a mantener el secreto. Tu puntualidad es muy importante.</div>
-<div class="details">
-<div class="detail"><strong>Fecha</strong><span>Sábado, 9 de enero de 2027</span></div>
-<div class="detail"><strong>Hora</strong><span>Hora de llegada de invitados: 5:20 p. m.<br>El cumpleañero llegará a las 6:00 p. m.</span></div>
-<div class="detail"><strong>Código de vestimenta</strong><span>Metalizado, negro o colores oscuros</span></div>
-<div class="detail"><strong>Lugar</strong><span>Salón Social, Conjunto Tacuará<br>Dosquebradas, Risaralda</span></div>
-</div>
-<a class="btn" href="https://www.google.com/maps/search/?api=1&query=Conjunto+Tacuara+Dosquebradas+Risaralda" target="_blank" rel="noopener">VER UBICACIÓN</a>
-<p class="lead">Tu presencia hará esta noche aún más especial.</p>
-<p class="foot">Celebración sorpresa · Edward · 30 años<br>Por favor, no compartas esta invitación con el homenajeado.</p>
-</section></main>
+<body>
+<main class="wrap">
+<article class="card">
+<header>
+  <div class="eyebrow">Una noche para recordar · Invitación especial</div>
+  <h1>EDWARD</h1>
+  <div class="rule"></div>
+  <p class="story">30 años no se cumplen 2 veces en una misma vida. Y en Enero soyedy, el narva, narváez, jhony, edu, o como ya algunos lo conocen "el osito", los cumple, y estoy preparando una reunión <strong class="gold">SORPRESA</strong>, escuchaste muy bien <strong class="gold">SORPRESA</strong>, para él en este día tan importante</p>
+  <div class="center"><button class="btn secondary" type="button" id="listenBtn">▶ ESCUCHAR INVITACIÓN</button></div>
+</header>
+
+<div class="notice">🤫 <strong>RESERVA TOTAL: ES UNA SORPRESA.</strong><br>Esta celebración se está organizando con mucho cariño. Por favor, no le menciones nada a Edward ni compartas esta invitación con él. ¡Contamos contigo para guardar el secreto!</div>
+
+<section class="section">
+  <h2>La celebración</h2>
+  <p class="section-intro">Queremos compartir una noche especial, recordar viejos tiempos y celebrar juntos.</p>
+  <div class="details">
+    <div class="detail"><strong>Fecha</strong><span>Sábado<br>9 de enero de 2027</span></div>
+    <div class="detail"><strong>Hora de llegada</strong><span>Invitados: <b class="gold">5:20 p. m.</b><br>Edward llega a las <b class="gold">6:00 p. m.</b><br><small>¡Puntualidad, por favor!</small></span></div>
+    <div class="detail"><strong>Lugar</strong><span>Salón Social<br>Conjunto Residencial Tacuará<br>Dosquebradas, Risaralda</span><a class="maplink" href="https://maps.app.goo.gl/9o7w7LE5G9a6kbYi6" target="_blank" rel="noopener">Cómo llegar ↗</a></div>
+    <div class="detail"><strong>Vestuario</strong><span>Negro, colores oscuros<br>o metalizados</span></div>
+  </div>
+  <p class="story">Lo más importante es contar con tu presencia. Si además deseas tener un detalle, habrá una <strong class="gold">cajita para lluvia de sobres</strong>; es totalmente opcional y no esperamos nada más que compartir contigo.</p>
+</section>
+
+<section class="section" id="confirmacion">
+  <h2>Confirma tu asistencia</h2>
+  <p class="section-intro">Por favor responde antes del <strong class="gold">lunes 9 de noviembre de 2026</strong>. Tu respuesta nos ayudará a organizar cada detalle.</p>
+  <div class="notice" style="margin-top:0">Selecciona el combo de tu invitación. Si llegaste desde tu enlace personalizado, aparecerá seleccionado automáticamente.</div>
+  <form id="rsvpForm">
+    <div class="field">
+      <label for="guest">Tu nombre / combo de invitación *</label>
+      <select id="guest" name="guest" required>
+        <option value="">Selecciona tu combo</option>
+        <optgroup label="Combo Amigos">
+          <option>Anderson y Majo</option><option>Calvo, Laura y Vito</option><option>Cris y Luisa</option><option>Erick</option><option>Jessika y el mono</option><option>Sebas y Alison</option>
+        </optgroup>
+        <optgroup label="Combo Gutiérrez">
+          <option>Erika, Felipe y Hannah</option><option>Natalia</option><option>Norberto</option><option>Robinson</option><option>Sonia</option>
+        </optgroup>
+        <optgroup label="Combo Londoño">
+          <option>Amanda, Norberto y Jaider</option><option>Andres, esposa y Axel</option><option>Angela Maria y esposo</option><option>Eloisa</option><option>Jessika, esposo y José Manuel</option><option>Luz Mary Muñoz</option><option>Tocayo, Edna y Thiago</option><option>Toño</option><option>Vanessa y esposo</option>
+        </optgroup>
+        <optgroup label="Combo Narváez">
+          <option>César y Mélida</option><option>Claudia y Mauro</option><option>Daniel y Lucero</option><option>Daniela y Juan Miguel</option><option>Gloria y Alfonso</option><option>Humberto y Stella</option><option>Jessika, Andrés, Salo y Gaby</option><option>Johana y Juan Antonio</option><option>Julian y Sara</option><option>Julio</option><option>Karen y esposo</option><option>Katherine, Luis y Emi</option><option>Lyda</option><option>Marcela, esposo y Juanes</option><option>Miguel Angel</option><option>Stiven</option><option>Isabela y Tatiana</option>
+        </optgroup>
+        <optgroup label="Combo Padre">
+          <option>Héctor y Lala</option><option>Rubi y Mario</option><option>Toto, esposa y Violeta</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <div class="field">
+      <span class="field-label">¿Nos acompañarás? *</span>
+      <div class="choice-list">
+        <label class="choice"><input type="radio" name="attendance" value="¡Sí, allá estaré sin falta!" required> ¡Sí, allá estaré sin falta!</label>
+        <label class="choice"><input type="radio" name="attendance" value="Lamentablemente no podré ir"> Lamentablemente no podré ir</label>
+      </div>
+    </div>
+
+    <div class="field" id="attendeesField">
+      <label for="attendees">¿Cuántas personas asistirán en total, incluyéndote? *</label>
+      <input id="attendees" name="attendees" type="number" min="1" max="40" step="1" value="1" required>
+      <p class="hint">Indica el total de personas de tu combo que asistirán.</p>
+    </div>
+
+    <div class="field">
+      <span class="field-label">🎮 ¿Qué consola podrías prestar para recordar viejos tiempos?</span>
+      <div class="choice-list">
+        <label class="choice"><input type="checkbox" name="console" value="Play 1"> Play 1</label>
+        <label class="choice"><input type="checkbox" name="console" value="Play 2"> Play 2</label>
+        <label class="choice"><input type="checkbox" name="console" value="Play 3"> Play 3</label>
+        <label class="choice"><input type="checkbox" name="console" value="Play 4"> Play 4</label>
+        <label class="choice"><input type="checkbox" name="console" value="Nintendo 64"> Nintendo 64</label>
+        <label class="choice"><input type="checkbox" name="console" value="Poly (PolyStation)"> Poly (PolyStation)</label>
+        <label class="choice"><input type="checkbox" name="console" value="Xbox 360"> Xbox 360</label>
+        <label class="choice"><input type="checkbox" name="console" value="Ninguna"> Ninguna</label>
+      </div>
+      <div class="gamer">Tranquilo(a), Edward personalmente la manejará, cuidará y conectará. Es solo para revivir viejos tiempos y jugar un rato.</div>
+    </div>
+
+    <div class="field">
+      <span class="field-label">¿Podrías prestar un monitor o pantalla?</span>
+      <div class="choice-list">
+        <label class="choice"><input type="radio" name="monitor" value="No tengo / No puedo llevar"> No tengo / No puedo llevar</label>
+        <label class="choice"><input type="radio" name="monitor" value="Sí, puedo prestar un monitor / pantalla"> Sí, puedo prestar un monitor / pantalla</label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="notes">Observaciones</label>
+      <textarea id="notes" name="notes" placeholder="Por ejemplo: pulgadas del monitor, cables disponibles, detalles que debamos tener en cuenta..."></textarea>
+    </div>
+    <button class="btn submit" type="submit">GUARDAR MI RESPUESTA</button>
+    <div class="status" id="formStatus" role="status" aria-live="polite"></div>
+  </form>
+  <p class="smallprint">La confirmación en esta versión es una vista previa local: todavía no se envía ni se guarda en la lista de la organizadora. La conexión con Google Sheets se activará en una siguiente actualización. No vuelvas a enviar datos sensibles aquí.</p>
+</section>
+
+<footer>
+  Tu presencia hará esta noche aún más especial.<br><br>
+  <span class="gold">Celebración sorpresa · Edward · 30 años</span><br>
+  Por favor, no compartas esta invitación con el homenajeado.
+</footer>
+</article>
+</main>
 <script>
-const params=new URLSearchParams(location.search);const invitado=(params.get('invitado')||'').trim();
-if(invitado){document.getElementById('saludo').textContent='Una invitación especial para '+invitado;}
-</script></body></html>
+const params = new URLSearchParams(location.search);
+const requestedGuest = (params.get("invitado") || "").trim();
+const guestSelect = document.getElementById("guest");
+if (requestedGuest) {
+  const match = [...guestSelect.options].find(o => o.value.toLocaleLowerCase("es") === requestedGuest.toLocaleLowerCase("es"));
+  if (match) guestSelect.value = match.value;
+}
+const attendanceInputs = [...document.querySelectorAll('input[name="attendance"]')];
+const attendees = document.getElementById("attendees");
+const attendeesField = document.getElementById("attendeesField");
+function updateAttendance() {
+  const yes = document.querySelector('input[name="attendance"]:checked')?.value === "¡Sí, allá estaré sin falta!";
+  attendees.disabled = !yes;
+  attendees.required = yes;
+  attendeesField.style.opacity = yes ? "1" : ".45";
+  if (!yes) attendees.value = "0";
+  else if (attendees.value === "0") attendees.value = "1";
+}
+attendanceInputs.forEach(input => input.addEventListener("change", updateAttendance));
+document.getElementById("rsvpForm").addEventListener("submit", event => {
+  event.preventDefault();
+  const form = event.currentTarget;
+  if (!form.reportValidity()) return;
+  const data = {
+    invitado: guestSelect.value,
+    asistencia: document.querySelector('input[name="attendance"]:checked').value,
+    totalAsistentes: Number(attendees.value),
+    consolas: [...document.querySelectorAll('input[name="console"]:checked')].map(x => x.value),
+    monitor: document.querySelector('input[name="monitor"]:checked')?.value || "Sin respuesta",
+    observaciones: document.getElementById("notes").value.trim()
+  };
+  const status = document.getElementById("formStatus");
+  status.classList.add("show");
+  status.innerHTML = "<strong>¡Gracias por responder!</strong><br>Esta es una vista previa de tu respuesta. Aún no se ha enviado a la organizadora porque estamos preparando la conexión segura con Google Sheets.";
+  status.dataset.response = JSON.stringify(data);
+  status.scrollIntoView({behavior:"smooth",block:"center"});
+});
+document.getElementById("listenBtn").addEventListener("click", () => {
+  if (!("speechSynthesis" in window)) {
+    alert("Tu navegador no admite lectura en voz alta. Puedes leer el mensaje en pantalla.");
+    return;
+  }
+  window.speechSynthesis.cancel();
+  const text = '30 años no se cumplen 2 veces en una misma vida. Y en Enero soyedy, el narva, narváez, jhony, edu, o como ya algunos lo conocen el osito, los cumple, y estoy preparando una reunión sorpresa, escuchaste muy bien sorpresa, para él en este día tan importante.';
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "es-CO";
+  utterance.rate = .92;
+  window.speechSynthesis.speak(utterance);
+});
+</script>
+</body>
+</html>

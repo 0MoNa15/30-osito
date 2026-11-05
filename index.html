@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090909"><title>Edward · 30 años</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#d6b45b;--cream:#f4e8c4;--muted:#b8b2a3}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0,#292216 0,#101010 48%,#070707 100%);color:#f7f4ec;font-family:Montserrat,Arial,sans-serif;padding:28px 16px 60px}.wrap{max-width:720px;margin:auto}.card{border:1px solid #806b37;border-radius:22px;background:linear-gradient(160deg,rgba(29,27,22,.96),rgba(10,10,10,.98));padding:clamp(25px,6vw,56px);text-align:center;box-shadow:0 25px 80px #0009;position:relative;overflow:hidden}.card:before{content:"";position:absolute;inset:8px;border:1px solid #d6b45b35;border-radius:15px;pointer-events:none}.eyebrow{letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-size:.72rem}.age{font:clamp(5rem,20vw,9rem)/1 Cinzel,serif;color:var(--gold);margin:24px 0 4px;text-shadow:0 0 35px #d6b45b35}.name{font:clamp(2rem,8vw,3.4rem) Cinzel,serif;letter-spacing:5px;margin:0;color:var(--cream)}.rule{width:90px;height:1px;background:var(--gold);margin:28px auto}.lead{font-size:1.12rem;line-height:1.9;color:#eee6d4}.highlight{color:var(--gold);font-weight:600}.details{display:grid;gap:14px;margin:30px 0}.detail{border-top:1px solid #d6b45b45;padding:15px 8px}.detail strong{display:block;color:var(--gold);font-size:.75rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}.detail span{line-height:1.6}.notice{background:#35280f;border:1px solid #a77c25;border-radius:12px;padding:16px;color:#f4dfaa;line-height:1.6;margin:26px 0}.guest{color:var(--gold);font-weight:600}.btn{display:inline-block;background:linear-gradient(120deg,#f2dda0,#b88b2b);color:#17130a;text-decoration:none;padding:14px 25px;border-radius:30px;font-weight:700;letter-spacing:1px;margin-top:12px}.foot{color:var(--muted);font-size:.8rem;margin-top:28px;line-height:1.7}a.map{color:var(--cream)}@media(max-width:480px){body{padding:14px 10px 35px}.card{padding:32px 20px}}
+</style>
+</head>
+<body><main class="wrap"><section class="card">
+<div class="eyebrow">Una noche para recordar</div>
+<div class="age">30</div><h1 class="name">EDWARD</h1><div class="rule"></div>
+<p class="lead">Hay momentos que merecen celebrarse en grande…<br>y este es uno de ellos.<br><span class="highlight">¡Te esperamos para celebrar sus 30 años!</span></p>
+<p id="saludo" class="lead guest"></p>
+<div class="notice">🤫 <strong>¡Es una sorpresa!</strong><br>Ayúdanos a mantener el secreto. Tu puntualidad es muy importante.</div>
+<div class="details">
+<div class="detail"><strong>Fecha</strong><span>Sábado, 9 de enero de 2027</span></div>
+<div class="detail"><strong>Hora de citación</strong><span>5:20 p. m. · Edward llegará a las 6:00 p. m.</span></div>
+<div class="detail"><strong>Lugar</strong><span>Salón Social, Conjunto Tacuará<br>Dosquebradas, Risaralda</span></div>
+<div class="detail"><strong>Vestuario</strong><span>Elegante · Negro y dorado</span></div>
+</div>
+<p class="lead">Tu presencia hará esta noche aún más especial.</p>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&query=Conjunto+Tacuara+Dosquebradas+Risaralda" target="_blank" rel="noopener">VER UBICACIÓN</a>
+<p class="foot">Celebración sorpresa · Edward · 30 años<br>Por favor, no compartas esta invitación con el homenajeado.</p>
+</section></main>
+<script>
+const params=new URLSearchParams(location.search);const invitado=(params.get('invitado')||'').trim();
+if(invitado){document.getElementById('saludo').textContent='Una invitación especial para '+invitado;}
+</script></body></html>

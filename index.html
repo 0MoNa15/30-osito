@@ -151,7 +151,7 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;line-height:1.8;mar
     <button class="btn submit" type="submit">GUARDAR MI RESPUESTA</button>
     <div class="status" id="formStatus" role="status" aria-live="polite"></div>
   </form>
-  <p class="smallprint">La confirmación en esta versión es una vista previa local: todavía no se envía ni se guarda en la lista de la organizadora. La conexión con Google Sheets se activará en una siguiente actualización. No vuelvas a enviar datos sensibles aquí.</p>
+  <p class="smallprint">Tu respuesta se enviará de forma segura a la organizadora y quedará registrada en la hoja privada de confirmaciones.</p>
 </section>
 
 <footer>
@@ -170,10 +170,13 @@ if (requestedGuest) {
   if (match) guestSelect.value = match.value;
 }
 const attendanceInputs = [...document.querySelectorAll('input[name="attendance"]')];
+const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbz7f-BfnsZjVyyI78ffF1mk8vyo7m29k1DvQssKufOn2VzhRvAUblW-Bnwiv30tliWC/exec";
 document.getElementById("rsvpForm").addEventListener("submit", event => {
   event.preventDefault();
   const form = event.currentTarget;
   if (!form.reportValidity()) return;
+  const submitButton = form.querySelector('button[type="submit"]');
+  const status = document.getElementById("formStatus");
   const data = {
     invitado: guestSelect.value,
     asistencia: document.querySelector('input[name="attendance"]:checked').value,
@@ -181,11 +184,56 @@ document.getElementById("rsvpForm").addEventListener("submit", event => {
     monitor: document.querySelector('input[name="monitor"]:checked')?.value || "Sin respuesta",
     observaciones: document.getElementById("notes").value.trim()
   };
-  const status = document.getElementById("formStatus");
+
+  submitButton.disabled = true;
+  submitButton.textContent = "ENVIANDO RESPUESTA…";
   status.classList.add("show");
-  status.innerHTML = "<strong>¡Gracias por responder!</strong><br>Esta es una vista previa de tu respuesta. Aún no se ha enviado a la organizadora porque estamos preparando la conexión segura con Google Sheets.";
-  status.dataset.response = JSON.stringify(data);
-  status.scrollIntoView({behavior:"smooth",block:"center"});
+  status.textContent = "Estamos enviando tu respuesta. Por favor, espera un momento y no cierres esta página.";
+
+  const iframe = document.createElement("iframe");
+  const frameName = "rsvp_submit_" + Date.now();
+  iframe.name = frameName;
+  iframe.title = "Envío de confirmación";
+  iframe.hidden = true;
+  document.body.appendChild(iframe);
+
+  const sendForm = document.createElement("form");
+  sendForm.method = "POST";
+  sendForm.action = RSVP_ENDPOINT;
+  sendForm.target = frameName;
+  sendForm.style.display = "none";
+  const payload = document.createElement("input");
+  payload.type = "hidden";
+  payload.name = "payload";
+  payload.value = JSON.stringify(data);
+  sendForm.appendChild(payload);
+  document.body.appendChild(sendForm);
+
+  let finished = false;
+  const finish = (ok, message) => {
+    if (finished) return;
+    finished = true;
+    window.removeEventListener("message", onMessage);
+    clearTimeout(timeout);
+    status.innerHTML = ok
+      ? "<strong>¡Respuesta registrada correctamente!</strong><br>Gracias por confirmar. La organizadora ya puede consultar tu respuesta."
+      : "<strong>No pudimos confirmar el envío.</strong><br>" + message + " Por favor, inténtalo de nuevo en unos minutos.";
+    status.scrollIntoView({behavior:"smooth",block:"center"});
+    submitButton.disabled = false;
+    submitButton.textContent = "GUARDAR MI RESPUESTA";
+    sendForm.remove();
+    iframe.remove();
+  };
+  const onMessage = messageEvent => {
+    if (messageEvent.source !== iframe.contentWindow) return;
+    const result = messageEvent.data;
+    if (!result || result.type !== "EDWARD_RSVP_RESULT") return;
+    if (result.ok === true) finish(true, "");
+    else finish(false, String(result.error || "Revisa tu conexión e inténtalo nuevamente."));
+  };
+  window.addEventListener("message", onMessage);
+  const timeout = setTimeout(() => finish(false, "El servidor no respondió a tiempo."), 30000);
+  sendForm.submit();
 });
 document.getElementById("listenBtn").addEventListener("click", () => {
   if (!("speechSynthesis" in window)) {
